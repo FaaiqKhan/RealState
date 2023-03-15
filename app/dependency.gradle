@@ -37,6 +37,9 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$androidx_lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_extensions_version"
 
+    // Compose
+    implementation "androidx.compose.runtime:runtime-livedata:$compose_version"
+
     // ViewModel
     implementation "androidx.fragment:fragment-ktx:$androidx_fragment_version"
 }
