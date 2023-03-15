@@ -30,7 +30,7 @@ interface PropertyDataRepositoryModule {
 
     @Binds
     fun bindGetPropertyDetailsUseCase(
-        defaultGetPropertyListUseCase: DefaultGetPropertyListUseCase
+        defaultGetPropertyDetailsUseCase: DefaultGetPropertyDetailsUseCase
     ): GetPropertyDetailsUseCase
 
     @Binds
