@@ -3,6 +3,7 @@ package com.example.realstate.di
 import com.example.realstate.network.apiClient.PropertyDataApiClient
 import com.example.realstate.repository.PropertyDataRepository
 import com.example.realstate.repository.PropertyListDataRepository
+import com.example.realstate.usecases.*
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -16,7 +17,8 @@ import retrofit2.Retrofit
 class PropertyDataDIModule {
 
     @Provides
-    fun providePropertyDataApiClient(retrofit: Retrofit): PropertyDataApiClient = retrofit.create(PropertyDataApiClient::class.java)
+    fun providePropertyDataApiClient(retrofit: Retrofit): PropertyDataApiClient =
+        retrofit.create(PropertyDataApiClient::class.java)
 }
 
 @Module
@@ -25,4 +27,14 @@ interface PropertyDataRepositoryModule {
 
     @Binds
     fun bindPropertyListDataRepository(propertyListDataRepository: PropertyListDataRepository): PropertyDataRepository
+
+    @Binds
+    fun bindGetPropertyDetailsUseCase(
+        defaultGetPropertyListUseCase: DefaultGetPropertyListUseCase
+    ): GetPropertyDetailsUseCase
+
+    @Binds
+    fun bindGetPropertyListUseCase(
+        defaultGetPropertyListUseCase: DefaultGetPropertyListUseCase
+    ): GetPropertyListUseCase
 }
