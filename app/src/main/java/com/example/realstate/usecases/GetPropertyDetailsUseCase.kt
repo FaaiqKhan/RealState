@@ -16,10 +16,10 @@ class DefaultGetPropertyDetailsUseCase @Inject constructor(
     private val propertyDataRepository: PropertyDataRepository
 ) : GetPropertyDetailsUseCase {
 
-    override fun invoke(id: Int?): Flow<PropertyDetailViewState> = flow {
+    override fun invoke(id: Int): Flow<PropertyDetailViewState> = flow {
         emit(PropertyDetailViewState.Loading)
         emit(
-            when (val response = propertyDataRepository.getPropertyDetails(id!!)) {
+            when (val response = propertyDataRepository.getPropertyDetails(id)) {
                 is NetworkResponse.Success -> onSuccess(response)
                 is NetworkResponse.Failure -> onFailure(response)
             }
@@ -31,14 +31,14 @@ class DefaultGetPropertyDetailsUseCase @Inject constructor(
             PropertyDetailUIData(
                 id = result.data.id,
                 city = result.data.city,
-                bedrooms = result.data.bedrooms,
+                bedrooms = result.data.bedrooms ?: 0,
                 area = result.data.area,
-                image = result.data.imageUrl,
+                image = result.data.imageUrl.orEmpty(),
                 price = result.data.price,
                 professional = result.data.professional,
                 propertyType = result.data.propertyType,
                 offerType = result.data.offerType,
-                rooms = result.data.rooms
+                rooms = result.data.rooms ?: 0
             )
         )
 

@@ -1,5 +1,6 @@
 package com.example.realstate.presentation
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.CircularProgressIndicator
@@ -12,7 +13,10 @@ import com.example.realstate.data.PropertyListUIData
 import com.example.realstate.viewStates.PropertyListViewState
 
 @Composable
-fun PropertyListView(listViewState: PropertyListViewState) {
+fun PropertyListView(
+    listViewState: PropertyListViewState,
+    onItemClicked: (data: PropertyListUIData) -> Unit
+) {
     if (listViewState is PropertyListViewState.Loading) {
         CircularProgressIndicator(
             modifier = Modifier.size(50.dp)
@@ -30,7 +34,7 @@ fun PropertyListView(listViewState: PropertyListViewState) {
             items(
                 count = data.size,
             ) {
-                PropertyItemLayout(data = data[it])
+                PropertyItemLayout(data = data[it], onItemClicked)
             }
         }
     }
@@ -59,17 +63,17 @@ private fun PreviewPropertyListView() {
             area = 250.0
         )
     )
-    PropertyListView(PropertyListViewState.Success(data))
+    PropertyListView(PropertyListViewState.Success(data)) {}
 }
 
 @Preview
 @Composable
 private fun PreviewPropertyListViewFailure() {
-    PropertyListView(PropertyListViewState.Failure("Something went wrong"))
+    PropertyListView(PropertyListViewState.Failure("Something went wrong")) {}
 }
 
 @Preview
 @Composable
 private fun PreviewPropertyListViewLoading() {
-    PropertyListView(PropertyListViewState.Loading)
+    PropertyListView(PropertyListViewState.Loading) {}
 }

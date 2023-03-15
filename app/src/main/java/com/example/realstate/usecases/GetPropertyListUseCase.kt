@@ -15,7 +15,7 @@ class DefaultGetPropertyListUseCase @Inject constructor(
     private val propertyDataRepository: PropertyDataRepository
 ): GetPropertyListUseCase {
 
-    override fun invoke(id: Unit?): Flow<PropertyListViewState> = flow {
+    override fun invoke(data: Unit): Flow<PropertyListViewState> = flow {
         emit(PropertyListViewState.Loading)
         emit(
             when (val response = propertyDataRepository.getPropertyListData()) {
@@ -29,11 +29,11 @@ class DefaultGetPropertyListUseCase @Inject constructor(
         PropertyListViewState.Success(result.data.items.map {
             PropertyListUIData(
                 id = it.id,
-                image = it.imageUrl,
+                image = it.imageUrl.orEmpty(),
                 price = it.price,
                 city = it.city,
-                rooms = it.rooms,
-                bedrooms = it.bedrooms,
+                rooms = it.rooms ?: 0,
+                bedrooms = it.bedrooms ?: 0,
                 area = it.area
             )
         })

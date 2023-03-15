@@ -12,13 +12,13 @@ data class PropertyListResponseData(
 data class PropertyResponseData(
     val id: Int,
     val city: String,
-    val bedrooms: Int,
+    val bedrooms: Int?,
     val area: Double,
     @Json(name = "url")
-    val imageUrl: String,
+    val imageUrl: String?,
     val price: Double,
     val professional: String,
     val propertyType: String,
     val offerType: Int,
-    val rooms: Int,
+    val rooms: Int?,
 )

@@ -1,5 +1,6 @@
 package com.example.realstate.presentation
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Surface
@@ -18,8 +19,11 @@ import coil.compose.AsyncImage
 import com.example.realstate.data.*
 
 @Composable
-fun PropertyItemLayout(data: PropertyListUIData) {
-    Surface {
+fun PropertyItemLayout(
+    data: PropertyListUIData,
+    onItemClicked: (data: PropertyListUIData) -> Unit
+) {
+    Surface(modifier = Modifier.clickable { onItemClicked(data) }) {
         Column {
             AsyncImage(
                 model = data.image,
@@ -79,5 +83,5 @@ private fun PreviewPropertyItemLayout() {
             bedrooms = 4,
             area = 250.0
         )
-    )
+    ) {}
 }

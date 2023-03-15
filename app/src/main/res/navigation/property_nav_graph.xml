@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/property_nav_graph"
+    app:startDestination="@id/propertyListFragment">
+
+    <fragment
+        android:id="@+id/propertyListFragment"
+        android:name="com.example.realstate.presentation.PropertyListFragment"
+        android:label="PropertyListFragment" >
+        <action
+            android:id="@+id/action_propertyListFragment_to_propertyDetailsFragment"
+            app:destination="@id/propertyDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/propertyDetailsFragment"
+        android:name="com.example.realstate.presentation.PropertyDetailsFragment"
+        android:label="PropertyDetailsFragment" >
+        <argument
+            android:name="propertyId"
+            app:argType="integer" />
+    </fragment>
+</navigation>

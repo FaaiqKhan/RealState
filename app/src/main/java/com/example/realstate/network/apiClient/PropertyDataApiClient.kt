@@ -9,6 +9,6 @@ interface PropertyDataApiClient {
     @GET("listings.json")
     suspend fun fetchProperties(): PropertyListResponseData
 
-    @GET("listings{id}.json")
+    @GET("listings/{id}.json")
     suspend fun fetchPropertyDetails(@Path("id") id: Int): PropertyResponseData
 }
