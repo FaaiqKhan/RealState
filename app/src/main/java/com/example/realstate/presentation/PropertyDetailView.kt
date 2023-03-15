@@ -144,7 +144,7 @@ private fun PreviewPropertyDetailViewSuccess() {
         city = "Berlin",
         bedrooms = 2,
         area = 80.0,
-        url = "",
+        image = "",
         price = 890.0,
         professional = "unknown",
         propertyType = "Rental",
