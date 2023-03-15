@@ -5,12 +5,6 @@ dependencies {
     implementation "androidx.compose.ui:ui:$compose_ui_version"
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"
     implementation "androidx.compose.material:material:$compose_material_version"
-    testImplementation "junit:junit:$junit_version"
-    androidTestImplementation "androidx.test.ext:junit:$junit_ext_version"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$expresso_core_version"
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
-    debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
-    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
 
     implementation("androidx.appcompat:appcompat:1.6.1")
 
@@ -50,4 +44,20 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$androidx_nav_version"
     implementation "androidx.navigation:navigation-fragment:$androidx_nav_version"
     implementation "androidx.navigation:navigation-fragment-ktx:$androidx_nav_version"
+
+    // Tests
+    testImplementation "junit:junit:$junit_version"
+    testImplementation "org.mockito:mockito-core:$mokito_version"
+    testImplementation "androidx.arch.core:core-testing:$core_testing_version"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$core_testing_version"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutine_test_version"
+
+    androidTestImplementation "androidx.test:rules:$test_rules_version"
+    androidTestImplementation "androidx.test:runner:$test_runner_version"
+    androidTestImplementation "androidx.test.ext:junit:$junit_ext_version"
+    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$expresso_core_version"
+
+    debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
+    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
 }
