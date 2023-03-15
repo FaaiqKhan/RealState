@@ -127,3 +127,9 @@ private fun HouseDetailsCard(title: String, subtitle: String) {
 private fun PreviewPropertyDetailView() {
     PropertyDetailView()
 }
+
+@Preview
+@Composable
+private fun PreviewHouseDetailsCard() {
+    HouseDetailsCard(title = "1400", subtitle = "meter square")
+}
