@@ -41,40 +41,49 @@ class PropertyListViewModelTest {
 
     @Test
     fun `should update viewState with Loading when use-case returns Loading`() {
+        // given
         whenever(propertyListUseCase(Unit)).thenReturn(
             flow {
                 emit(PropertyListViewState.Loading)
             }
         )
 
+        // when
         propertyListViewModel.fetchProperties()
 
+        // then
         Assert.assertNotNull(propertyListViewModel.propertyListViewState.value is PropertyListViewState.Loading)
     }
 
     @Test
     fun `should update viewState with success when use-case returns success`() {
+        // given
         whenever(propertyListUseCase(Unit)).thenReturn(
             flow {
                 emit(PropertyListViewState.Success(listOf(uiData)))
             }
         )
 
+        // when
         propertyListViewModel.fetchProperties()
 
+        // then
         Assert.assertNotNull(propertyListViewModel.propertyListViewState.value is PropertyListViewState.Success)
     }
 
     @Test
     fun `should update viewState with failure when use-case returns failure`() {
+        // given
         whenever(propertyListUseCase(Unit)).thenReturn(
             flow {
                 emit(PropertyListViewState.Failure(message = ""))
             }
         )
 
+        // when
         propertyListViewModel.fetchProperties()
 
+        // then
         Assert.assertNotNull(propertyListViewModel.propertyListViewState.value is PropertyListViewState.Failure)
     }
 

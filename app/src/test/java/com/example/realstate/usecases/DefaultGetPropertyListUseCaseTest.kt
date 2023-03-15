@@ -30,10 +30,13 @@ class DefaultGetPropertyListUseCaseTest {
             add(PropertyListViewState.Failure(""))
         }.toTypedArray()
 
+        // given
         whenever(propertyDataRepository.getPropertyListData()).thenReturn(responseResult)
 
+        // when
         val uiStates = propertyListUseCase.invoke(Unit).toList().toTypedArray()
 
+        // then
         Assert.assertNotNull(uiStates)
         Assert.assertArrayEquals(expectedUIStates, uiStates)
     }
@@ -47,10 +50,13 @@ class DefaultGetPropertyListUseCaseTest {
             add(PropertyListViewState.Success(listOf(uiData)))
         }.toTypedArray()
 
+        // given
         whenever(propertyDataRepository.getPropertyListData()).thenReturn(responseResult)
 
+        // when
         val uiStates = propertyListUseCase.invoke(Unit).toList().toTypedArray()
 
+        // then
         Assert.assertNotNull(uiStates)
         Assert.assertArrayEquals(expectedUIStates, uiStates)
     }
