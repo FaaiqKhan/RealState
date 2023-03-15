@@ -11,6 +11,9 @@ buildscript {
         core_version = '1.9.0'
         coil_version = '2.2.2'
         moshi_version = '1.11.0'
+        okhttp_interceptor_version = '4.9.1'
+        retrofit_version = '2.9.0'
+        coroutine_adapter_version = '0.9.2'
     }
 }// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
