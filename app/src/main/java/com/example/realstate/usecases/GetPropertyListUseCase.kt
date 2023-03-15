@@ -15,7 +15,7 @@ class DefaultGetPropertyListUseCase @Inject constructor(
     private val propertyDataRepository: PropertyDataRepository
 ): GetPropertyListUseCase {
 
-    override fun invoke(id: Unit): Flow<PropertyListViewState> = flow {
+    override fun invoke(id: Unit?): Flow<PropertyListViewState> = flow {
         emit(PropertyListViewState.Loading)
         emit(
             when (val response = propertyDataRepository.getPropertyListData()) {
