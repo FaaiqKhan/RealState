@@ -34,12 +34,12 @@ fun PropertyItemLayout(
                     .clip(RoundedCornerShape(20.dp)),
                 contentScale = ContentScale.FillWidth
             )
-            Spacer(modifier = Modifier.height(height = 14.dp))
+            Spacer(modifier = Modifier.height(height = 4.dp))
             Row(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Text(
-                    text = data.price.toString(),
+                    text = data.price,
                     fontSize = 18.sp,
                     fontWeight = FontWeight.Bold
                 )
@@ -49,7 +49,7 @@ fun PropertyItemLayout(
                     color = Color.Gray
                 )
             }
-            Spacer(modifier = Modifier.height(height = 14.dp))
+            Spacer(modifier = Modifier.height(height = 2.dp))
             Row(
                 verticalAlignment = Alignment.CenterVertically
             ) {
@@ -77,11 +77,11 @@ private fun PreviewPropertyItemLayout() {
         PropertyListUIData(
             id = 1,
             image = "https://v.seloger.com/s/crop/590x330/visuels/1/7/t/3/17t3fitclms3bzwv8qshbyzh9dw32e9l0p0udr80k.jpg",
-            price = 150000.0,
+            price = "150000.0",
             city = "Villers-sur-Mer",
-            rooms = 8,
-            bedrooms = 4,
-            area = 250.0
+            rooms = "8",
+            bedrooms = "4",
+            area = "250.0"
         )
     ) {}
 }

@@ -1,5 +1,6 @@
 package com.example.realstate.usecases
 
+import androidx.compose.ui.unit.dp
 import com.example.realstate.data.PropertyDetailUIData
 import com.example.realstate.data.PropertyResponseData
 import com.example.realstate.network.NetworkResponse
@@ -31,14 +32,14 @@ class DefaultGetPropertyDetailsUseCase @Inject constructor(
             PropertyDetailUIData(
                 id = result.data.id,
                 city = result.data.city,
-                bedrooms = result.data.bedrooms ?: 0,
-                area = result.data.area,
-                image = result.data.imageUrl.orEmpty(),
-                price = result.data.price,
+                bedrooms = result.data.bedrooms.toString(),
+                area = result.data.area.toString(),
+                image = result.data.imageUrl,
+                price = result.data.price.toString(),
                 professional = result.data.professional,
                 propertyType = result.data.propertyType,
-                offerType = result.data.offerType,
-                rooms = result.data.rooms ?: 0
+                offerType = result.data.offerType.toString(),
+                rooms = result.data.rooms.toString()
             )
         )
 

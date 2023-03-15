@@ -8,10 +8,11 @@ import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
+import com.example.realstate.ui.theme.RealStateTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class PropertyListFragment: Fragment() {
+class PropertyListFragment : Fragment() {
 
     private val propertyListViewModel: PropertyListViewModel by viewModels()
 
@@ -22,11 +23,14 @@ class PropertyListFragment: Fragment() {
     ): View {
         return ComposeView(requireContext()).apply {
             setContent {
-                val state by propertyListViewModel.propertyListViewState.observeAsState()
-                state?.let { it ->
-                    PropertyListView(listViewState = it) { data ->
-                    navigateToDetails(data.id)
-                } }
+                RealStateTheme {
+                    val state by propertyListViewModel.propertyListViewState.observeAsState()
+                    state?.let { it ->
+                        PropertyListView(listViewState = it) { data ->
+                            navigateToDetails(data.id)
+                        }
+                    }
+                }
             }
         }
     }

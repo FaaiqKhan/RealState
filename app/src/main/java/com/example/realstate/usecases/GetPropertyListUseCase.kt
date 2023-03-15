@@ -29,12 +29,12 @@ class DefaultGetPropertyListUseCase @Inject constructor(
         PropertyListViewState.Success(result.data.items.map {
             PropertyListUIData(
                 id = it.id,
-                image = it.imageUrl.orEmpty(),
-                price = it.price,
+                image = it.imageUrl,
+                price = it.price.toString(),
                 city = it.city,
-                rooms = it.rooms ?: 0,
-                bedrooms = it.bedrooms ?: 0,
-                area = it.area
+                rooms = it.rooms.toString(),
+                bedrooms = it.bedrooms.toString(),
+                area = it.area.toString()
             )
         })
 

@@ -12,13 +12,13 @@ data class PropertyListResponseData(
 data class PropertyResponseData(
     val id: Int,
     val city: String,
-    val bedrooms: Int?,
+    val bedrooms: Int = 0,
     val area: Double,
     @Json(name = "url")
-    val imageUrl: String?,
+    val imageUrl: String = "https://w7.pngwing.com/pngs/330/741/png-transparent-home-inspection-house-mortgage-loan-real-estate-home-renovation-thumbnail.png",
     val price: Double,
     val professional: String,
     val propertyType: String,
     val offerType: Int,
-    val rooms: Int?,
+    val rooms: Int = 0,
 )
