@@ -1,6 +1,6 @@
 package com.example.realstate.data
 
-data class PropertyUIData(
+data class PropertyListUIData(
     val id: Int,
     val image: String,
     val price: Double,

@@ -1,5 +1,6 @@
 package com.example.realstate.data
 
+import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
@@ -13,7 +14,8 @@ data class PropertyResponseData(
     val city: String,
     val bedrooms: Int,
     val area: Double,
-    val url: String,
+    @Json(name = "url")
+    val imageUrl: String,
     val price: Double,
     val professional: String,
     val propertyType: String,

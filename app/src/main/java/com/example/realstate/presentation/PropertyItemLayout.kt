@@ -18,7 +18,7 @@ import coil.compose.AsyncImage
 import com.example.realstate.data.*
 
 @Composable
-fun PropertyItemLayout(data: PropertyUIData) {
+fun PropertyItemLayout(data: PropertyListUIData) {
     Surface {
         Column {
             AsyncImage(
@@ -70,7 +70,7 @@ fun PropertyItemLayout(data: PropertyUIData) {
 @Composable
 private fun PreviewPropertyItemLayout() {
     PropertyItemLayout(
-        PropertyUIData(
+        PropertyListUIData(
             id = 1,
             image = "https://v.seloger.com/s/crop/590x330/visuels/1/7/t/3/17t3fitclms3bzwv8qshbyzh9dw32e9l0p0udr80k.jpg",
             price = 150000.0,

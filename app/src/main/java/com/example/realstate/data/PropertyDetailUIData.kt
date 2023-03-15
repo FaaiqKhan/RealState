@@ -5,7 +5,7 @@ data class PropertyDetailUIData(
     val city: String,
     val bedrooms: Int,
     val area: Double,
-    val url: String,
+    val image: String,
     val price: Double,
     val professional: String,
     val propertyType: String,
