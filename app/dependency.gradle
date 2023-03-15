@@ -42,4 +42,10 @@ dependencies {
 
     // ViewModel
     implementation "androidx.fragment:fragment-ktx:$androidx_fragment_version"
+
+    // Navigation
+    implementation "androidx.navigation:navigation-ui:$androidx_nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$androidx_nav_version"
+    implementation "androidx.navigation:navigation-fragment:$androidx_nav_version"
+    implementation "androidx.navigation:navigation-fragment-ktx:$androidx_nav_version"
 }
