@@ -32,7 +32,7 @@ Real state application based on Android
     
 
 ### Screenshots 
-    
-    ![Screenshot_1678959078](https://user-images.githubusercontent.com/50907582/225574671-f262617c-3b6a-4c91-838c-d3f29ff694e1.png)
-    ![Screenshot_1678959086](https://user-images.githubusercontent.com/50907582/225574703-a1fa1e4e-51c4-4ed3-8497-f338277b5cac.png)
+
+<img src="https://user-images.githubusercontent.com/50907582/225574671-f262617c-3b6a-4c91-838c-d3f29ff694e1.png" width="400" height="800"> <img src="https://user-images.githubusercontent.com/50907582/225574703-a1fa1e4e-51c4-4ed3-8497-f338277b5cac.png" width="400" height="800">
+
 
