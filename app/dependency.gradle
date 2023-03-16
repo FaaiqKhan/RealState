@@ -45,6 +45,9 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment:$androidx_nav_version"
     implementation "androidx.navigation:navigation-fragment-ktx:$androidx_nav_version"
 
+    // Annotation
+    implementation "androidx.annotation:annotation:1.6.0"
+
     // Tests
     testImplementation "junit:junit:$junit_version"
     testImplementation "org.mockito:mockito-core:$mokito_version"
@@ -57,6 +60,9 @@ dependencies {
     androidTestImplementation "androidx.test.ext:junit:$junit_ext_version"
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$expresso_core_version"
+    androidTestImplementation "com.google.dagger:hilt-android-testing:2.45"
+    androidTestImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$core_testing_version"
+    androidTestImplementation "org.mockito:mockito-android:5.1.1"
 
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"

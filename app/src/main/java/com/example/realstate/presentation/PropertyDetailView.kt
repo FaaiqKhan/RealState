@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -25,7 +26,9 @@ fun PropertyDetailView(detailViewState: PropertyDetailViewState) {
             is PropertyDetailViewState.Loading -> {
                 Box(
                     contentAlignment = Alignment.Center,
-                    modifier = Modifier.size(40.dp)
+                    modifier = Modifier
+                        .size(40.dp)
+                        .testTag("Loader")
                 ) {
                     CircularProgressIndicator()
                 }
@@ -41,7 +44,9 @@ fun PropertyDetailView(detailViewState: PropertyDetailViewState) {
                     contentScale = ContentScale.FillWidth
                 )
                 Column (
-                    modifier = Modifier.padding(20.dp)
+                    modifier = Modifier
+                        .padding(20.dp)
+                        .testTag("Data")
                 ) {
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
@@ -103,7 +108,14 @@ fun PropertyDetailView(detailViewState: PropertyDetailViewState) {
                     )
                 }
             }
-            is PropertyDetailViewState.Failure -> Text(text = detailViewState.message)
+            is PropertyDetailViewState.Failure -> {
+                Box(
+                    contentAlignment = Alignment.Center,
+                    modifier = Modifier.testTag("Error")
+                ) {
+                    Text(text = detailViewState.message, modifier = Modifier.testTag("Error"))
+                }
+            }
         }
     }
 }

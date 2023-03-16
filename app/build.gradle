@@ -4,6 +4,7 @@ plugins {
     id 'dagger.hilt.android.plugin'
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-allopen'
 }
 
 android {
@@ -48,6 +49,10 @@ android {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
         }
     }
+}
+
+allOpen {
+    annotation("androidx.annotation.OpenForTesting")
 }
 
 apply from: "dependency.gradle"

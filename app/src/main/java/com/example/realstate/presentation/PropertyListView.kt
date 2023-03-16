@@ -6,6 +6,7 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.realstate.data.PropertyListUIData
@@ -20,18 +21,23 @@ fun PropertyListView(
         if (listViewState is PropertyListViewState.Loading) {
             Box(
                 contentAlignment = Alignment.Center,
-                modifier = Modifier.size(40.dp)
+                modifier = Modifier.size(40.dp).testTag("Loader")
             ) {
                 CircularProgressIndicator()
             }
         }
         if (listViewState is PropertyListViewState.Failure) {
-            Text(text = listViewState.message)
+            Box(
+                contentAlignment = Alignment.Center,
+                modifier = Modifier.testTag("Error")
+            ) {
+                Text(text = listViewState.message, modifier = Modifier.testTag("Error"))
+            }
         }
         if (listViewState is PropertyListViewState.Success) {
             val data = listViewState.items
             LazyColumn(
-                modifier = Modifier.padding(horizontal = 20.dp, vertical = 20.dp),
+                modifier = Modifier.padding(horizontal = 20.dp, vertical = 20.dp).testTag("data"),
                 verticalArrangement = Arrangement.spacedBy(22.dp),
             ) {
                 items(

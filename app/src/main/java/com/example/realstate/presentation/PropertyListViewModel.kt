@@ -1,5 +1,6 @@
 package com.example.realstate.presentation
 
+import androidx.annotation.OpenForTesting
 import androidx.lifecycle.*
 import com.example.realstate.usecases.GetPropertyListUseCase
 import com.example.realstate.viewStates.PropertyListViewState
@@ -8,6 +9,7 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@OpenForTesting
 @HiltViewModel
 class PropertyListViewModel @Inject constructor(
     private val propertyListUseCase: GetPropertyListUseCase
