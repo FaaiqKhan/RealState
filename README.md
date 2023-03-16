@@ -1,2 +1,19 @@
 # RealState
 Real state application based on Android
+
+Built With 🛠
+
+Kotlin - First class and official programming language for Android development.
+Coroutines - For asynchronous and more..
+Flow - A cold asynchronous data stream that sequentially emits values and completes normally or with an exception.
+LiveData - Data objects that notify views when the underlying database changes.
+ViewModel - Stores UI-related data that isn't destroyed on UI changes.
+Hilt - Easier way to incorporate Dagger DI into Android apps.
+Retrofit - A type-safe HTTP client for Android.
+Jetpack composes - An Android’s recommended modern toolkit for building native UI.
+that allows you to create automated UI tests for your Android app.
+Navigation - Refers to the interactions that allow users to navigate across, into, and back out from the different pieces of content within your app
+Coil - An image loading library for Android backed by Kotlin Coroutines.
+Junit - A “Unit Testing” framework for Java Applications.
+Mockito - A mocking framework that tastes really good. It lets you write beautiful tests with a clean & simple API.
+Espresso - A UI test framework (part of the Android Testing Support Library)
