@@ -1,5 +1,5 @@
 # RealState
-Real state application based on Android
+Real state android application developed using clean MVVM architecture and Jetpack compose.
 
 ## Built With 🛠
 
