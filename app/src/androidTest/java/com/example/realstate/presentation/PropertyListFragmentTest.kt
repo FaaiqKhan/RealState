@@ -10,7 +10,8 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.internal.runner.junit4.statement.UiThreadStatement
 import com.example.realstate.MainActivity
 import com.example.realstate.R
-import com.example.realstate.viewStates.PropertyListViewState
+import com.example.realstate.uiLayer.propertyList.PropertyListViewModel
+import com.example.realstate.uiLayer.viewStates.PropertyListViewState
 import com.nhaarman.mockitokotlin2.*
 import dagger.hilt.android.testing.BindValue
 import dagger.hilt.android.testing.HiltAndroidTest

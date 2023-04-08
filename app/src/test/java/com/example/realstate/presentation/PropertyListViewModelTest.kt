@@ -1,9 +1,10 @@
 package com.example.realstate.presentation
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.example.realstate.data.PropertyListUIData
-import com.example.realstate.usecases.GetPropertyListUseCase
-import com.example.realstate.viewStates.PropertyListViewState
+import com.example.realstate.dataLayer.data.PropertyListUIData
+import com.example.realstate.uiLayer.propertyList.PropertyListViewModel
+import com.example.realstate.domainLayer.usecases.GetPropertyListUseCase
+import com.example.realstate.uiLayer.viewStates.PropertyListViewState
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
 import kotlinx.coroutines.Dispatchers

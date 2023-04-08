@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/propertyListFragment"
-        android:name="com.example.realstate.presentation.PropertyListFragment"
+        android:name="com.example.realstate.uiLayer.propertyList.PropertyListFragment"
         android:label="PropertyListFragment" >
         <action
             android:id="@+id/action_propertyListFragment_to_propertyDetailsFragment"
@@ -14,7 +14,7 @@
     </fragment>
     <fragment
         android:id="@+id/propertyDetailsFragment"
-        android:name="com.example.realstate.presentation.PropertyDetailsFragment"
+        android:name="com.example.realstate.uiLayer.propertyDetails.PropertyDetailsFragment"
         android:label="PropertyDetailsFragment" >
         <argument
             android:name="propertyId"

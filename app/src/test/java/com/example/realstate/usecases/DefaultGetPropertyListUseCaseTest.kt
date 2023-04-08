@@ -1,10 +1,12 @@
 package com.example.realstate.usecases
 
 import com.example.realstate.data.*
-import com.example.realstate.network.ErrorResponse
-import com.example.realstate.network.NetworkResponse
-import com.example.realstate.repository.PropertyDataRepository
-import com.example.realstate.viewStates.PropertyListViewState
+import com.example.realstate.dataLayer.data.*
+import com.example.realstate.dataLayer.network.ErrorResponse
+import com.example.realstate.dataLayer.network.NetworkResponse
+import com.example.realstate.dataLayer.repository.PropertyDataRepository
+import com.example.realstate.domainLayer.usecases.DefaultGetPropertyListUseCase
+import com.example.realstate.uiLayer.viewStates.PropertyListViewState
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
 import kotlinx.coroutines.flow.toList

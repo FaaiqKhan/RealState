@@ -1,9 +1,12 @@
 package com.example.realstate.repository
 
 import com.example.realstate.data.*
-import com.example.realstate.network.ErrorResponse
-import com.example.realstate.network.NetworkResponse
-import com.example.realstate.network.apiClient.PropertyDataApiClient
+import com.example.realstate.dataLayer.data.PropertyListResponseData
+import com.example.realstate.dataLayer.data.PropertyResponseData
+import com.example.realstate.dataLayer.network.ErrorResponse
+import com.example.realstate.dataLayer.network.NetworkResponse
+import com.example.realstate.dataLayer.network.apiClient.PropertyDataApiClient
+import com.example.realstate.dataLayer.repository.PropertyListDataRepository
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
 import kotlinx.coroutines.runBlocking
